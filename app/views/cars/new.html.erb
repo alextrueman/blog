@@ -15,6 +15,11 @@
   </p>
 
   <p>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </p>
+
+  <p>
     <%= form.label :drivers %><br>
     <%= form.select :cars, @drivers, { include_hidden: false },  multiple: true, name: 'car[drivers][]' %>
   </p>

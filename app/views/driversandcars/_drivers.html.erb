@@ -1,0 +1,15 @@
+<p>Drivers of <strong><%= car.title %></strong></p>
+<table>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>created at</th>
+  </tr>
+  <% car.drivers.each do |driver| %>
+    <tr>
+      <td><%= driver.id %></td>
+      <td><%= driver.name %></td>
+      <td><%= driver.created_at %></td>
+    </tr>
+  <% end %>
+</table>

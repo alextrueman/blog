@@ -1,0 +1,12 @@
+<%= form_tag("/driversandcars", method: "get") do %>
+  <%= label_tag(:search_drivers, "Search for:") %>
+  <%= select_tag(:search_drivers, options_for_select(@cars), prompt: "Select something" ) %>
+
+  <%= label_tag(:search_cars, "Search for:") %>
+  <%= select_tag(:search_cars, options_for_select(@drivers), prompt: "Select something" )%>
+
+  <%= submit_tag("Search", name: nil) %>
+<% end %>
+
+<%= render partial: 'cars', locals: { driver: @driver } if @driver %>
+<%= render partial: 'drivers', locals: { car: @car } if @car %>
