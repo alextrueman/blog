@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_20_202348) do
+ActiveRecord::Schema.define(version: 2020_01_21_232324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,29 @@ ActiveRecord::Schema.define(version: 2020_01_20_202348) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cars", force: :cascade do |t|
+    t.string "title"
+    t.string "car_type"
+    t.integer "color", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cars_drivers", force: :cascade do |t|
+    t.bigint "car_id"
+    t.bigint "driver_id"
+    t.index ["car_id"], name: "index_cars_drivers_on_car_id"
+    t.index ["driver_id"], name: "index_cars_drivers_on_driver_id"
+  end
+
+  create_table "drivers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.date "birthday"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

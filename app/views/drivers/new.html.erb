@@ -1,0 +1,25 @@
+<%= form_with scope: :driver, url: drivers_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+  </p>
+
+  <p>
+    <%= form.label :birthday %><br>
+    <%= form.date_field :birthday %>
+  </p>
+
+  <p>
+    <%= form.label :cars %><br>
+    <%= form.select :drivers, @cars, { include_hidden: false },  multiple: true, name: 'driver[cars][]' %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

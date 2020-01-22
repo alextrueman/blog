@@ -1,0 +1,27 @@
+<h1>Listing Cars</h1>
+
+<table border=1>
+  <tr>
+    <th>Title</th>
+    <th>Type</th>
+    <th>Color</th>
+    <th>Drivers</th>
+    <th></th>
+  </tr>
+ 
+  <% @cars.each do |car| %>
+    <tr>
+      <td><%= car.title %></td>
+      <td><%= car.car_type %></td>
+      <td><%= car.color %></td>
+      <td>
+        <ol>
+          <% car.drivers.map(&:name).each do |name| %>
+            <li><%= name %></li>
+          <% end %>
+        </ol>
+      </td>
+      <td><%= link_to 'Show', car_path(car) %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,34 @@
+<p>
+  <strong>Title:</strong>
+  <%= @car.title %>
+</p>
+ 
+<p>
+  <strong>Type:</strong>
+  <%= @car.car_type %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @car.color %>
+</p>
+
+<p>
+  <strong>Drivers</strong>
+  <table border=1>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>email</th>
+      <th>date of birth</th>
+    </tr>
+    <% @car.drivers.each do |driver| %>
+      <tr>
+        <td><%= driver.id %></td>
+        <td><%= driver.name %></td>
+        <td><%= driver.email %></td>
+        <td><%= driver.birthday %></td>
+      </tr>
+    <% end %>
+  </table>
+</p>

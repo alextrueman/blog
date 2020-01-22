@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-
   resources :articles
+  resources :drivers
 
+  resources :cars
   root 'welcome#index'
 end

@@ -1,0 +1,25 @@
+<%= form_with scope: :car, url: cars_path, local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :car_type %><br>
+    <%= form.text_field :car_type %>
+  </p>
+
+  <p>
+    <%= form.label :color %><br>
+    <%= form.select :color, Car.colors.keys %>
+  </p>
+
+  <p>
+    <%= form.label :drivers %><br>
+    <%= form.select :cars, @drivers, { include_hidden: false },  multiple: true, name: 'car[drivers][]' %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
