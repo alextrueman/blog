@@ -16,6 +16,7 @@ class CarsController < ApplicationController
     @car = Car.new(car_params.merge(drivers: drivers))
 
     @car.save
+    ActionCable.server.broadcast 'car_creates_channel', id: @car.id, title: @car.title, car_type: @car.car_type, color: @car.color
     redirect_to @car
   end
 
