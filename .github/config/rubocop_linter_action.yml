@@ -12,6 +12,7 @@ check_name: 'Rubocop Results'
 versions:
   - rubocop: '0.74.0'
   - rubocop-rails
+  - rubocop-rspec
   - rubocop-minitest
   - rubocop-performance: '1.5.1'
 
