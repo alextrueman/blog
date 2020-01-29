@@ -3,5 +3,13 @@ on:
     branches:
       - master
 
-- name: Rubocop checks
-  uses: gimenete/rubocop-action@1.0
+name: rubocop
+
+jobs:
+  rubocop:
+    name: rubocop
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Rubocop checks
+        uses: gimenete/rubocop-action@1.0
