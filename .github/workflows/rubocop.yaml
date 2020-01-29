@@ -1,17 +1,14 @@
-on:
-  pull_request:
-    branches:
-      - master
-
-name: rubocop
+name: CI
+on: [push]
 
 jobs:
-  rubocop:
-    name: rubocop
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Rubocop Linter Action
-        uses: andrewmcodes/rubocop-linter-action@v3.0.0
+
+    - uses: actions/checkout@v1
+
+    - name: Rubocop checks
+        uses: lyttco/github-actions-rubocop@1.3.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
