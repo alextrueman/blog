@@ -24,8 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'paperclip', '~> 6.0.0'
 
-gem 'rubocop-performance', require: false
-gem 'rubocop-rails', require: false
+gem 'rubocop-performance'
+gem 'rubocop-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
