@@ -2,8 +2,8 @@ check_name: "Rubocop Results"
 rubocop_version: 'latest'
 rubocop_extensions:
   - 'rubocop-rails'
-  - 'rubocop-performance': '1.5.1'
-  - 'rubocop-rspec': '1.37.0'
+  - 'rubocop-performance'
+  - 'rubocop-rspec'
 rubocop_config_path: '.rubocop.yml'
 bundle: false
 check_scope: 'modified'
