@@ -12,5 +12,6 @@ jobs:
       with:
         version: '0.74.0'
         additional_gems: 'rubocop-rails rubocop-performance rubocop-rspec' 
+        fail_level: 'warning'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
