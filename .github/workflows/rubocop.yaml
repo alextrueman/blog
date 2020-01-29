@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: gimenete/rubocop-action@1.0
       - name: Rubocop checks
+        uses: gimenete/rubocop-action@1.0
         env:
-          GITHUB_TOKEN: ${{ secrets.RUBOCOP_SECRET }}
+          GITHUB_TOKEN: ${{ secrets.RUBOCOP_SECRETT }}
         run: rubocop
