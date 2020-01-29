@@ -3,5 +3,16 @@ on:
     branches:
       - master
 
-- name: Rubocop checks
-  uses: gimenete/rubocop-action@1.0
+name: rubocop
+
+jobs:
+  rubocop:
+    name: rubocop
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: gimenete/rubocop-action@1.0
+      - name: Rubocop checks
+        env:
+          GITHUB_TOKEN: ${{ secrets.RUBOCOP_SECRET }}
+        run: rubocop
