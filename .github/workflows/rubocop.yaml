@@ -14,5 +14,5 @@ jobs:
       - uses: gimenete/rubocop-action@1.0
       - name: Rubocop checks
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RUBOCOP_SECRET }}
         run: rubocop
