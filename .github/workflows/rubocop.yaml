@@ -1,40 +1,14 @@
-#name: Lint
-#on:
-  #pull_request:
-    #branches:
-      #- master
-      #- staging
-#jobs:
-  #lint-ruby:
-    #name: Lint Ruby
-    #runs-on: ubuntu-latest
-    #steps:
-      #- uses: actions/checkout@v1
-      #- uses: actions/setup-ruby@v1
-      #- name: Lint with StandardRB
-        #run: |
-          #gem install -q -N standardrb
-          #TARGET_REF=origin/${{ github.event.pull_request.base.ref }}
-          #echo "git diff --name-only $TARGET_REF $GITHUB_SHA --diff-filter=d"
-          #CHANGED_FILES=$(git diff --name-only $TARGET_REF $GITHUB_SHA --diff-filter=d)
-          #echo "Linting files:"
-          #printf "%s\n" "${CHANGED_FILES[@]}"
-          #printf "%s\n" "${CHANGED_FILES[@]}" | xargs standardrb -f t -P
-
-on:
-  pull_request:
-    branches:
-      - master
-
-name: rubocop
+name: CI
+on: [push]
 
 jobs:
-  rubocop:
-    name: rubocop
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Rubocop checks
-        uses: gimenete/rubocop-action@1.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - uses: actions/checkout@v1
+
+    - name: Rubocop checks
+      uses: lyttco/github-actions-rubocop@1.4.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
