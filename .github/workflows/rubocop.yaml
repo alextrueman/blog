@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Rubocop Linter
-      uses: andrewmcodes/rubocop-linter-action@v2.0.1
+      uses: andrewmcodes/rubocop-linter-action@v3.0.0.rc1
       with:
         version: '0.74.0'
         additional_gems: 'rubocop-rails rubocop-performance rubocop-rspec'
