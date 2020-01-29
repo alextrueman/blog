@@ -1,8 +1,5 @@
 name: Rubocop
-on:
-  pull_request:
-    branches:
-      - master
+on: [push]
 
 jobs:
   rubocop:
