@@ -10,6 +10,7 @@ jobs:
     - name: Rubocop Linter
       uses: andrewmcodes/rubocop-linter-action@v3.0.0
       with:
-        action_config_path: '.github/config/rubocop_linter_action.yml' # Note: this is the default location
+        version: '0.74.0'
+        additional_gems: 'rubocop-rails rubocop-performance rubocop-rspec' 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
