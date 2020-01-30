@@ -1,0 +1,13 @@
+name: Pronto
+
+on:
+  - push
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: adwerx/pronto-ruby@v2.3.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
