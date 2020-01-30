@@ -1,5 +1,5 @@
 name: Rubocop
-on: [pull_request]
+on: [push]
 jobs:
   rubocop:
     name: Rubocop Action
