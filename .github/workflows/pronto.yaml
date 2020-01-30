@@ -1,15 +1,14 @@
 name: Pronto
-on: [pull_request]
+
+on:
+  - push
+  - pull_request
 
 jobs:
-  pronto:
-
+  run:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-ruby@v1
-        with:
-          ruby-version: '2.6'
-      - run: gem install rugged pronto pronto-rubocop
-      - run: PRONTO_PULL_REQUEST_ID="$(jq --raw-output .number "$GITHUB_EVENT_PATH")" PRONTO_GITHUB_ACCESS_TOKEN="${{ secrets.GITHUB_TOKEN }}" pronto run -f github_status github_pr -c origin/master
+    - uses: actions/checkout@v1
+    - uses: adwerx/pronto-ruby@v2.2.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
